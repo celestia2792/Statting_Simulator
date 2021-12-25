@@ -1,0 +1,49 @@
+﻿<Window x:Class="Statting_Simulator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Statting_Simulator"
+        mc:Ignorable="d"
+        Title="Statting Simulator" Height="350" Width="250">
+    <Window.Resources>
+        <Style TargetType="{x:Type Window}">
+            <Setter Property="FontFamily" Value="./Fonts/#나눔고딕"/>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" FontSize="25" Text="Statting Simulator"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="DefaultBox" Grid.Row="0" Grid.Column="0" FontSize="15" Text="장비 유형"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" FontSize="15" Text="레시피 잠재력"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" FontSize="15" Text="시작 잠재력"/>
+            <ComboBox x:Name="TypeBox" Margin="8" Grid.Row="0" Grid.Column="1">
+                <ComboBoxItem Content="무기" IsSelected="True"/>
+                <ComboBoxItem Content="방어구"/>
+            </ComboBox>
+            <TextBox x:Name="RPbox" Grid.Row="1" Grid.Column="1" Margin="10"/>
+            <TextBox x:Name="STbox" Grid.Row="2" Grid.Column="1" Margin="10"/>
+            <Button x:Name="StartBtn" Content="시작" Grid.Row="4" Margin="25,10,10,10" Click="Start"/>
+            <Button x:Name="SettingBtn" Content="설정" Grid.Row="4" Grid.Column="1" Margin="10,10,25,10" Click="GoSetting"/>
+        </Grid>
+    </Grid>
+</Window>
