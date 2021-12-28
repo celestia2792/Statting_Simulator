@@ -33,7 +33,9 @@ namespace Statting_Simulator
         private void Start(object sender, RoutedEventArgs e)
         {
             bool IsWeapon = TypeBox.SelectedIndex != 1;
-            _ = MessageBox.Show($"{IsWeapon} / {RPbox.Text} / {STbox.Text} / {proficiency} / {Tec}");
+            Simulator IW = new(IsWeapon, Convert.ToInt32(RPbox.Text), Convert.ToInt32(STbox.Text)
+                , proficiency, Tec);
+            _ = IW.ShowDialog();
         }
 
         private void GoSetting(object sender, RoutedEventArgs e)
